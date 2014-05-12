@@ -242,8 +242,8 @@ public class Fraction extends Number implements Cloneable {
 	 * @return the result of the reduction of this fraction
 	 */
 	public Fraction reduce() {
-		// TODO
-		return null;
+		int gcd = GCD.gcd(numerator,denominator);
+		return new Fraction(numerator/gcd, denominator/gcd);
 	}
 
 	/**
