@@ -29,8 +29,13 @@ public class Fraction extends Number implements Cloneable {
 	 */
 	public Fraction(int numerator, int denominator) throws ArithmeticException {
 		if (denominator == 0) throw new ArithmeticException();
-		this.numerator = numerator;
-		this.denominator = denominator;
+		if (denominator < 0) {
+			this.numerator = -numerator;
+			this.denominator = -denominator;
+		} else {
+			this.numerator = numerator;
+			this.denominator = denominator;
+		}
 	}
 
 	/**
